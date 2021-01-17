@@ -35,25 +35,26 @@ Default axon event store is used, use the jar or docker found on https://axoniq.
 
 # Very basic manual how you can use the application: 
 
-1. login as admin and get a token from keycloak and use this in your requests (
-2. create an orderbook. example; `POST http://localhost:8081/admin/createOrderbook?pair=BTC_EUR`
-3. login as user and add buy / sell order  :
+1. Login as admin and get a token from keycloak and use this in your requests (
+2. Create an orderbook. example; `POST http://localhost:8081/admin/createOrderbook?pair=BTC_EUR`
+3. Login as user and add buy / sell order  :
 `POST http://localhost:8081/buyOrder?amountOfEur=2&price=48000&pair=BTC_EUR`
 `POST http://localhost:8081/sellOrder?amountOfCrypto=.1&pair=BTC_EUR`
 if no price is given then the order will be executed on the market level.
-4. view open orders; `GET http://localhost:8081/all-orders` or  `GET http://localhost:8081/all-orders/getPriceInfo`
+4. View open orders; `GET http://localhost:8081/all-orders` or  `GET http://localhost:8081/all-orders/getPriceInfo`
 
 # TODO 
 
-error handling
-usage of different coins in view 
-ordering in views
-cancelling orders
-add orders to account
-calculate crypto for price/amount and vice versa
-connect db to events for snapshot storage
-integration tests
-split application in read / CUD projects
-keep better track of balance/liquidity
+- error handling
+- usage of different coins in view 
+- ordering in views
+- cancelling orders
+- add orders to account
+- calculate crypto for price/amount and vice versa
+- connect db to events for snapshot storage
+- integration tests
+- split application in read / CUD projects
+- keep better track of balance/liquidity
+- rethink whether a hashmap is smart in orderbook view logic
 
 and much more...
